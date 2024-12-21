@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đăng Bán Bất Động Sản</title>
+    <link rel="stylesheet" href="../css/dangbanbds.css" />
+  </head>
+  <body>
+    <header class="header">
+      <h1>Trang Đăng Bán Bất Động Sản</h1>
+    </header>
+
+    <main>
+      <section class="form-section">
+        <h2>Đăng tin bán bất động sản</h2>
+        <form action="#" method="POST" class="property-form">
+          <label for="title">Tiêu đề:</label>
+          <input
+            type="text"
+            id="title"
+            name="title"
+            placeholder="Nhập tiêu đề"
+            required
+          />
+
+          <label for="price">Giá bán (VND):</label>
+          <input
+            type="number"
+            id="price"
+            name="price"
+            placeholder="Nhập giá bán"
+            required
+          />
+
+          <label for="address">Địa chỉ:</label>
+          <input
+            type="text"
+            id="address"
+            name="address"
+            placeholder="Nhập địa chỉ"
+            required
+          />
+
+          <label for="description">Mô tả:</label>
+          <textarea
+            id="description"
+            name="description"
+            rows="5"
+            placeholder="Nhập mô tả chi tiết"
+            required
+          ></textarea>
+
+          <label for="image">Hình ảnh:</label>
+          <input
+            type="file"
+            id="image"
+            name="image"
+            accept="image/*"
+            required
+          />
+
+          <button type="submit" class="btn">Đăng tin</button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>&copy; 2024 Đăng Bán Bất Động Sản UTHLand</p>
+    </footer>
+  </body>
+</html>
