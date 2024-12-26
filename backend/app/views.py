@@ -1,14 +1,21 @@
 from django.shortcuts import render
-def home(request):
-    return render(request, 'index.html')
+from django.http import HttpResponse
+from django.template import loader
 
-def blog(request):
-    return render(request, 'Blog.html')
+def Index(request):
+    return render(request,'index.html')
 
-def dangbanbatdongsan(request):
-    return render(request, 'dangbanbatdongsan.html')
+def Blog(request):
+    template = loader.get_template('Blog.html')
+    return HttpResponse(template.render())
 
-def tuyendung(request):
-    return render(request, 'tuyendung.html')
+def DangBanBatDongSan(request):
+    template = loader.get_template('dangbanbatdongsan.html')
+    return HttpResponse(template.render())
+
+def TuyenDung(request):
+    template = loader.get_template('tuyendung.html')
+    return HttpResponse(template.render())
+
 
 # Create your views here.

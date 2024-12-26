@@ -20,8 +20,8 @@ from app import views   # type: ignore # Replace 'my_app' with the actual name o
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home, name='home'),
-    path('blog/', views.blog, name='blog'),
-    path('dangbanbatdongsan/', views.dangbanbatdongsan, name='dangbanbatdongsan'),
-    path('tuyendung/', views.tuyendung, name='tuyendung'),
+    path('', views.Index, name='index'),
+    path('blog/', views.Blog, name='blog'),
+    path('dangbanbatdongsan/', views.DangBanBatDongSan, name='dangbanbatdongsan'),
+    path('tuyendung/', views.TuyenDung, name='tuyendung'),
 ]
