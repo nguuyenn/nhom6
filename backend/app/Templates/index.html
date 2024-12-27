@@ -32,7 +32,10 @@
             <option value="nha">Nhà</option>
           </select>
           <select>
-            <option value="tinh">Chọn tỉnh thành</option>
+            <option value="tinh">Chọn tỉnh thành</option> 
+            {% for item in TinhThanh %}
+            <option value="{{ item.id }}">{{ item.ten_tinh_thanh }} </option> 
+            {% endfor %}
           </select>
           <input type="text" placeholder="Chọn dự án" />
           <button type="submit">Tìm kiếm</button>
