@@ -1,0 +1,154 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #4dd0e1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #ffffff;
+  background: linear-gradient(135deg, #4dd0e1, #1e88e5);
+  overflow: hidden;
+}
+
+.login-container {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  background-color: #ffffff;
+  color: #333333;
+  position: relative;
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.login-box h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #4dd0e1;
+  font-size: 2em;
+  position: relative;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.form-group {
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #4dd0e1;
+  font-size: 1em;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  background-color: #f9f9f9;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #4dd0e1;
+  box-shadow: 0 0 8px rgba(77, 208, 225, 0.8);
+  background-color: #e0f7fa;
+}
+
+.btn-login {
+  width: 100%;
+  padding: 10px;
+  background-color: #4dd0e1;
+  color: #ffffff;
+  border: none;
+  border-radius: 25px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-login:hover {
+  background-color: #36b7c7;
+  transform: translateY(-3px);
+}
+
+.btn-login:active {
+  background-color: #2da6af;
+  transform: translateY(0);
+  box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Decoration Elements */
+.login-container::before,
+.login-container::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(77, 208, 225, 0.5);
+  z-index: -1;
+  animation: float 6s infinite ease-in-out;
+}
+
+.login-container::before {
+  width: 200px;
+  height: 200px;
+  top: -50px;
+  left: -50px;
+}
+
+.login-container::after {
+  width: 150px;
+  height: 150px;
+  bottom: -40px;
+  right: -40px;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-20px) scale(1.1);
+  }
+}
+
+/* Placeholder styling */
+::placeholder {
+  color: #999;
+  font-style: italic;
+}
+/* Nút "Đăng Nhập" */
+.header .user-actions .login-button {
+  background-color: #1976d2; /* Màu xanh dương */
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  margin-left: 0.5rem; /* Khoảng cách giữa các nút */
+  display: inline-block;
+}
+.header .user-actions .login-button:hover {
+  background-color: #1565c0; /* Màu xanh dương đậm hơn khi hover */
+}
