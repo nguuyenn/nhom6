@@ -39,10 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'app',
-<<<<<<< HEAD
     'app_admin',
-=======
->>>>>>> 6d95b7a92f801cf9d992d401174c5bfea691f7dd
 ]
 
 MIDDLEWARE = [
@@ -68,16 +65,11 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-<<<<<<< HEAD
                 'django.template.context_processors.media'
             ],
         },
         
-=======
-            ],
-        },
->>>>>>> 6d95b7a92f801cf9d992d401174c5bfea691f7dd
-    },
+    }
 ]
 
 WSGI_APPLICATION = 'backend.wsgi.application'
@@ -89,11 +81,7 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 DATABASES = {
    'default': {
         'ENGINE': 'django.db.backends.mysql',
-<<<<<<< HEAD
         'NAME':'NBatDongSanDB',
-=======
-        'NAME':'quanlybatdongsan',
->>>>>>> 6d95b7a92f801cf9d992d401174c5bfea691f7dd
         'USER':'root',
         'PASSWORD':'123456',
         'HOST':'127.0.0.1',
@@ -109,7 +97,6 @@ AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
     },
-<<<<<<< HEAD
 #     {
 #         'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
 #     },
@@ -134,20 +121,7 @@ ELASTISEARCH_DSL={
 #Etablish connection
 
 
-=======
-    {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-    },
-]
 
-
->>>>>>> 6d95b7a92f801cf9d992d401174c5bfea691f7dd
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
@@ -173,7 +147,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Dòng này cho Django biết nơi tìm các tệp tĩnh của bạn
 
 STATICFILES_DIRS = [(os.path.join(BASE_DIR,'static'))]
-<<<<<<< HEAD
 
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -192,5 +165,4 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'app/static/images')
 
 # Đưa người dùng về trang home 
 #LOGIN_REDIRECT_URL ='home'
-=======
->>>>>>> 6d95b7a92f801cf9d992d401174c5bfea691f7dd
+
