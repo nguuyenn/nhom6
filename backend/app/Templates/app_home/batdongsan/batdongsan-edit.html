@@ -1,0 +1,132 @@
+{% extends "master-page.html" %}
+{% load static %}
+{% block nav-bar %}
+    {% include '../../includes/nav-bar.html'%}
+{% endblock %}
+
+
+
+
+{% block content %}
+<head>
+    <title>Contact Form</title>
+    <style>
+               
+        .form-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 150vh; /* Chiều cao bằng với chiều cao viewport */
+        }
+
+        form {
+            width: 50%; /* Điều chỉnh chiều rộng tùy ý */
+            margin: 140px;
+            padding: 20px;
+            background-color: white; /* Tùy chọn: làm nổi bật form */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Tùy chọn: hiệu ứng đổ bóng nhẹ */
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        .form-container label {
+            font-weight: bold;
+        }
+
+        .form-container input, .form-container textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        .form-container input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+
+        .form-container input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .form-container small {
+            display: block;
+            margin-top: -10px;
+            margin-bottom: 10px;
+            color: #888;
+        }
+        {# Add this section at the top of your template to display messages #}
+    </style>
+</head>
+<body>
+    
+    <div class="form-container">
+        <form action ="{% url 'batdongsan-edit' batdongsan.id %}" method = "POST" enctype="multipart/form-data" >
+            {% csrf_token %}
+            <h2>Đăng tin bán bất động sản</h2>
+            <label for="name">Tên dự án cần bán </label>
+            <input value="{{ form.name.value }}"type="text" name = "name" required>
+            
+            <label for="category">Loại dự án (Nhà/Đất)</label>
+            <input value = "{{ form.category.value }}"type="text" name = "category" required>
+
+            <br><label for="local_TT"> Địa chỉ </label></br>
+            <input value = "{{ form.local_TT.value }}"type="text" name="local_TT" required >
+
+            <label for="area">Diện tích :</label>
+            <input value ="{{ form.area.value }}"type="text" name="area" required>
+            
+            <label for="year">Năm :</label>
+            <input type="text" name="year" value="{{ form.year.value }}" required>
+            
+            <label for="startDate">Ngày tháng năm:</label>
+            <button type="button" onclick="updateToday()">Today</button>
+            <input type="date" id="startDate" name="startDate" value="{{ form.startDate.value|date:'Y-m-d' }}" required>
+            <p>Ngày tháng năm: {{ form.startDate.value|date:"M. d, Y" }}</p>
+            
+            <br><label for="information">Thông tin chi tiết về bất động sản</label></br>
+            <textarea  name="information" rows="4" cols="50" required>"{{ form.information.value }}"</textarea>
+            
+            
+            <label for="price">Giá bán mong muốn (ví dụ 100(tr/tỷ))</label>
+            <input value = "{{ form.price.value }}"type="text"  name="price" require >
+            <small> Giá bán được tính theo đơn vị VNĐ </small>
+            
+            <label for="author">Người đăng bán </label>
+            <input value = "{{ form.author.value }}"type="text"  name="author" require >
+
+            <label for="profile_picture">Đăng ảnh của bất động sản </label>
+            <input value = "{{ form.profile_picture.value }}"type="file" name ="profile_picture" class="form-control" id="inputGroupFile02" >
+
+            <label for = "active">Active</label>
+            <input  type="checkbox" name="active" checked> 
+
+            <input type="submit" id = "new" value="Send">
+
+
+            <script>
+                function updateToday() {
+                    var today = new Date();
+                    var day = String(today.getDate()).padStart(2, '0');
+                    var month = String(today.getMonth() + 1).padStart(2, '0');
+                    var year = today.getFullYear();
+                    var formattedDate = year + '-' + month + '-' + day;
+                    document.getElementById('startDate').value = formattedDate;
+                }
+                
+                
+            </script>
+        </form>
+    </div>
+</body>
+{% endblock %}
+{% block footer %}
+    {% include '../../includes/footer.html'%}
+{% endblock %}

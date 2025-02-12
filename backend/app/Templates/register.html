@@ -1,0 +1,54 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'app_home/css/register.css' %}">
+    <title>UTHLand Sign Up</title>
+    
+</head>
+<body>
+    
+{%block register%}
+<div class="container">
+    <h1>UTHLand</h1>
+    <h2>Create a new account</h2>
+    <p>It's quick and easy.</p>
+    <form id="registerForm" method = "POST">
+        {% csrf_token %}
+        
+        {% for field in form %}
+            {% if field.errors %}
+                <div class="error-message">
+                    {{ field.label }}: 
+                    {% for error in field.errors %}
+                        <p>{{ error }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endfor %}
+        
+        <div class="name-fields">
+        <label for="first">First Name :</label>
+            {{ form.first_name }}
+        <label for="Last">Last Name :</label>
+            {{ form.last_name }}
+        </div>
+        <label for="Username">User Name :</label>
+            {{ form.username }}
+        <label for="Email">Email :</label>
+            {{ form.email }}
+        <label for="password1">Password :</label>
+            {{ form.password1 }}
+        <label for="password2">Repeat Password :</label>
+        {{ form.password2 }}
+        <p class="terms">By clicking Sign Up, you agree to our <a href="#">Terms</a>, <a href="#">Privacy Policy</a> and <a href="#">Cookies Policy</a>. You may receive SMS notifications from us and can opt out at any time.</p>
+        <button type="submit">Sign Up</button>
+    </form>
+    <p class="login-link">Already have an account? <a href="login">Log in</a></p>
+    <a href="/" class="forgot-password">Continue with a guest</a>
+</div>
+{%endblock%}
+</body>
+</html>

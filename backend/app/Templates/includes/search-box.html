@@ -1,0 +1,38 @@
+<main class="main">
+    <section class="search-box">
+      <section class="search-box">
+      <!-- Tìm theo loại -->
+      
+      <h2>Tìm kiếm</h2>
+
+        
+        
+        <form class="d-flex" role="search" method="POST" action="{% url 'search' %}">
+            {% csrf_token %}
+          <select class="form-control mb-2" name="category">
+              <option value="all">Tất cả loại</option>
+              <option value="dat">Đất</option>
+              <option value="nha">Nhà</option>
+          </select>
+          
+          
+          <input class="form-control mb-2" 
+               type="search" 
+               placeholder="Nhập tên bất động sản" 
+               name="searched">
+        
+        
+        
+        <!-- Tìm theo địa điểm -->
+          <input class="form-control mb-2" 
+                type="search" 
+                placeholder="Nhập địa điểm" 
+                name="location">
+          
+
+          <button class="btn btn-outline-success" type="submit">Tìm kiếm</button>
+      </form>
+    </section>
+
+
+  </main>

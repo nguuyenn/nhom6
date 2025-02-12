@@ -1,0 +1,76 @@
+{% extends "master-page.html" %}
+{%load static%}
+{% block nav-bar %}
+    {% include 'includes/nav-bar.html'%}
+{% endblock %}
+
+{% block search-box %}
+    {% include 'includes/search-box.html'%}
+{% endblock %}
+
+{% block content %}
+<section class="listings">
+    <h2>Danh Sách Căn Hộ Cao Cấp</h2>
+    <div class="listing">
+      <img src="{%static 'app_home/img/anh-nha1.jpg'%}" alt="Nhà số 1" />
+      <div class="listing-info">
+        <h3>Nhà đẹp tại trung tâm thành phố</h3>
+        <p>Giá: 2 tỷ VND</p>
+        <p>Địa chỉ: Quận 1, TP.HCM</p>
+      </div>
+    </div>
+    <div class="listing">
+      <img src="{%static 'app_home/img/anh-nha2.png'%}" alt="Nhà số 2" />
+      <div class="listing-info">
+        <h3>Đất nền giá rẻ</h3>
+        <p>Giá: 1.2 tỷ VND</p>
+        <p>Địa chỉ: Bình Dương</p>
+      </div>
+    </div>
+    <div class="listing">
+      <img src="{%static 'app_home/img/anh-nha3.jpg'%}" alt="Nhà số 3" />
+      <div class="listing-info">
+        <h3>Căn hộ cao cấp view đẹp</h3>
+        <p>Giá: 3.5 tỷ VND</p>
+        <p>Địa chỉ: Quận 2, TP.HCM</p>
+      </div>
+    </div>
+  </section>
+  <section class="land-listings">
+    <h2>Danh Sách Đất Nền</h2>
+    <div class="listing">
+      <img
+        src="{%static 'app_home/img/anh-dat-nen-ut/Anh-datnen1.jpg'%}"
+        alt="Đất nền vị trí đẹp"
+      />
+      <div class="listing-info">
+        <h3>Đất nền vị trí đẹp, gần khu công nghiệp</h3>
+        <p>Giá: 900 triệu VND</p>
+        <p>Địa chỉ: Long An</p>
+      </div>
+    </div>
+    <div class="listing">
+      <img
+        src="{%static 'app_home/img/anh-dat-nen-ut/Anh-datnen2.jpg'%}"
+        alt="Đất nền trung tâm"
+      />
+      <div class="listing-info">
+        <h3>Đất nền trung tâm, tiện xây dựng</h3>
+        <p>Giá: 1.5 tỷ VND</p>
+        <p>Địa chỉ: Biên Hòa, Đồng Nai</p>
+      </div>
+    </div>
+    <div class="listing">
+      <img src="{%static 'app_home/img/anh-dat-nen-ut/Anh-datnen3.jpg'%}" alt="Đất giá rẻ" />
+      <div class="listing-info">
+        <h3>Đất giá rẻ, đầu tư sinh lời</h3>
+        <p>Giá: 750 triệu VND</p>
+        <p>Địa chỉ: Bình Phước</p>
+      </div>
+    </div>
+  </section>
+{% endblock %}
+
+{% block footer %}
+    {% include 'includes/footer.html'%}
+{% endblock %}

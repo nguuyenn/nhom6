@@ -1,0 +1,278 @@
+/* Reset CSS */
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li,
+a,
+button {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #e0f7fa; /* Xanh nhạt (màu nền tổng thể) */
+  color: #333;
+}
+
+.header {
+  background-color: #4dd0e1; /* Màu xanh chủ đạo */
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header .nav a {
+  margin-right: 1rem;
+  color: white;
+  text-decoration: none;
+}
+
+.header .user-actions a {
+  background-color: #388e3c; /* Màu xanh lá cây */
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.header .user-actions a:hover {
+  background-color: #2c6e2f; /* Màu xanh lá cây đậm hơn khi hover */
+}
+
+.main {
+  padding: 2rem;
+}
+
+.search-box {
+  background-color: #b2ebf2; /* Màu sáng hơn một chút */
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.search-box form {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.search-box select,
+.search-box input,
+.search-box button {
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+.search-box button {
+  background-color: #4dd0e1; /* Màu nút chính */
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.categories {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.category {
+  background-color: #4dd0e1; /* Màu chủ đạo cho các mục */
+  padding: 1rem;
+  text-align: center;
+  border-radius: 8px;
+  color: white;
+}
+
+.category:hover {
+  background-color: #00796b; /* Hiệu ứng hover */
+}
+
+/* Styling cho danh sách bài đăng */
+.listings {
+  margin: 2rem 0;
+}
+
+.listings h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #00796b;
+}
+
+.listing {
+  display: flex;
+  align-items: center;
+  background-color: #f1f1f1; /* Màu nền cho bài đăng */
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Hiệu ứng đổ bóng */
+}
+
+.listing img {
+  width: 150px;
+  height: 100px;
+  border-radius: 8px;
+  margin-right: 1rem;
+}
+
+.listing-info h3 {
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.listing-info p {
+  color: #555;
+  margin-bottom: 0.25rem;
+}
+
+.listing:hover {
+  background-color: #e0f7fa; /* Hiệu ứng khi hover */
+  transform: scale(1.02); /* Hiệu ứng phóng to nhẹ */
+  transition: all 0.3s ease;
+}
+
+/* Phần mở rộng danh sách đất nền */
+.land-listings {
+  margin: 3rem 0; /* Tạo khoảng cách trên và dưới */
+  padding: 1.5rem;
+  background-color: #f9f9f9; /* Màu nền nhẹ */
+  border-radius: 8px; /* Bo góc */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Đổ bóng */
+}
+
+.land-listings h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  color: #00796b; /* Màu xanh nổi bật */
+  margin-bottom: 1.5rem;
+}
+
+.land-listings .listing {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff; /* Nền trắng cho mỗi bài đăng */
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Hiệu ứng bóng nhẹ */
+  transition: transform 0.3s ease; /* Hiệu ứng phóng to khi hover */
+}
+
+.land-listings .listing:hover {
+  transform: scale(1.03); /* Phóng to nhẹ khi hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Tăng đổ bóng */
+}
+
+.land-listings .listing img {
+  width: 150px;
+  height: 100px;
+  border-radius: 8px;
+  object-fit: cover; /* Giữ hình ảnh không bị méo */
+  margin-right: 1rem;
+}
+
+.land-listings .listing-info h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.land-listings .listing-info p {
+  font-size: 1rem;
+  color: #555;
+  margin: 0.2rem 0;
+}
+
+/* Ánh nắng mặt trời nhỏ hơn */
+.sunlight {
+  position: fixed;
+  top: 10%;
+  right: 15%;
+  width: 60px; /* Giảm kích thước chiều rộng */
+  height: 60px; /* Giảm kích thước chiều cao */
+  background: radial-gradient(
+    circle,
+    rgba(255, 223, 186, 0.8),
+    rgba(255, 255, 255, 0)
+  );
+  border-radius: 50%;
+  box-shadow: 0 0 20px 15px rgba(255, 223, 186, 0.5); /* Giảm kích thước ánh sáng tỏa */
+  animation: sunlight-pulse 5s infinite alternate;
+}
+
+@keyframes sunlight-pulse {
+  from {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1.05); /* Hiệu ứng phóng đại nhẹ */
+  }
+}
+
+/* Chim bay */
+.birds img {
+  position: fixed;
+  width: 50px;
+  animation: fly 10s linear infinite;
+}
+
+.bird-1 {
+  top: 20%;
+  left: -10%;
+  animation-delay: 0s;
+}
+
+.bird-2 {
+  top: 30%;
+  left: -10%;
+  animation-delay: 2s;
+}
+
+.bird-3 {
+  top: 40%;
+  left: -10%;
+  animation-delay: 4s;
+}
+
+/* Hiệu ứng di chuyển của chim */
+@keyframes fly {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  50% {
+    transform: translateX(50vw) translateY(-50px);
+  }
+  100% {
+    transform: translateX(100vw) translateY(0);
+  }
+}
+
+/* Footer */
+.footer {
+  background-color: #4dd0e1; /* Màu xanh đậm hơn */
+  color: white;
+  text-align: center;
+  padding: 1.5rem 0; /* Tạo khoảng cách trên và dưới */
+  font-size: 1.2rem; /* Phông chữ to hơn */
+  border-top: 5px solid #4dd0e1; /* Đường viền nổi bật phía trên */
+}
+
+.footer span {
+  display: block;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  color: #b2ebf2; /* Màu nhấn cho phần phụ */
+}

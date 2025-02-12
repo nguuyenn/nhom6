@@ -1,0 +1,19 @@
+Xác định chức năng chính
+Đối với chủ sở hữu bất động sản:
+
+Đăng ký tài khoản.
+Đăng nhập.
+Tạo bài đăng giới thiệu bất động sản (căn hộ, nhà, đất...).
+Xem danh sách các môi giới/đại lý uy tín được hệ thống gợi ý.
+Liên hệ với môi giới qua nền tảng.
+Đối với đại lý/môi giới:
+
+Đăng ký tài khoản.
+Đăng nhập.
+Xem danh sách các bất động sản phù hợp.
+Đề xuất hợp tác với chủ sở hữu.
+Hệ thống quản trị viên:
+
+Quản lý thông tin người dùng (chủ sở hữu và môi giới).
+Duyệt bài đăng bất động sản để đảm bảo chất lượng.
+Xác minh các đại lý/môi giới uy tín.

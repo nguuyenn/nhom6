@@ -1,0 +1,132 @@
+{%load static%}
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thông Tin Cá Nhân</title>
+    <link rel="stylesheet" href="{% static 'app_home/css/profile_user-edit.css' %}" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Nút quay lại trang chính -->
+      <header>
+        <a href="{%url 'profile'%}">⬅ Back to profile </a>
+      </header>
+      <!-- Form cập nhật thông tin -->
+    <form method = "POST" enctype = "multipart/form-data" action ="{%url 'profile-edit'%} " onsubmit="closeWindow()" >   
+      {%csrf_token%}
+        <div class="update-form">
+          <h2>Update Personal Information</h2>
+          <div class="avatar-container">
+            {% if user.profile.profile_picture %}
+        <img src="{{ user.profile.profile_picture.url }}"
+             alt="Ảnh đại diện"
+             id="avatar"
+             class="avatar"
+        />
+    {% else %}
+        <img src="{% static 'app_home/img/default-picture.jpg' %}"
+             alt="Ảnh đại diện mặc định"
+             id="avatar"
+             class="avatar"
+             with = "80"
+             height = "70"
+        />
+    {% endif %}
+
+            <div class="avatar-upload">
+              <label for="profile_picture">Update profile picture</label>
+              <input type="file" name ="profile_picture" class="l" id="" >
+            </div>
+          </div>
+          
+          <br></br>
+          <div style="display: flex; gap: 6.5rem; width: 100%;">
+            <div style="width: 40%;">
+              <label for="{{ user_form.first_name.id_for_label }}">First Name:</label>
+              <input type="text" name="{{ user_form.first_name.name }}" 
+                    value="{{ user_form.first_name.value|default:'' }}"
+                    class="form-control" id="{{ user_form.first_name.id_for_label }}">
+            </div>
+            <div style="width: 40%;">
+              <label for="{{ user_form.last_name.id_for_label }}">Last Name:</label>
+              {{ user_form.last_name.errors }}
+              <input type="text" name="{{ user_form.last_name.name }}" 
+                    value="{{ user_form.last_name.value|default:'' }}"
+                    class="form-control" id="{{ user_form.last_name.id_for_label }}">
+            </div>
+          </div>
+      
+          <br><label for"bio" >Bio: </label><br>
+          <textarea  name="bio" rows="6" cols="105" required>"{{ profile_form.bio.value|default:'' }}"</textarea>
+
+
+          <label for="{{ profile_form.phoneNumber.id_for_label }}">Phone Number:</label>
+                    {{ profile_form.phoneNumber.errors }}
+                    <input type="text" name="{{ profile_form.phoneNumber.name }}" 
+                           value="{{ profile_form.phoneNumber.value|default:'' }}"
+                           class="form-control" id="{{ profile_form.phoneNumber.id_for_label }}">
+        
+
+          <label for="{{ profile_form.local.id_for_label }}">Address:</label>
+                    {{ profile_form.local.errors }}
+                    <input type="text" name="{{ profile_form.local.name }}" 
+                           value="{{ profile_form.local.value|default:'' }}"
+                           class="form-control" id="{{ profile_form.local.id_for_label }}">
+
+
+          <label for="{{ user_form.email.id_for_label }}">Email (example@gmail.com):</label>
+                    {{ user_form.email.errors }}
+                    <input type="email" name="{{ user_form.email.name }}" 
+                           value="{{ user_form.email.value|default:'' }}"
+                           class="form-control" 
+                           id="{{ user_form.email.id_for_label }}"
+                    >
+
+
+          <label for="{{ profile_form.birthday.id_for_label }}">Birthday:</label>
+                    {{ profile_form.birthday.errors }}
+                    <input type="date" name="{{ profile_form.birthday.name }}" 
+                           value="{{ profile_form.birthday.value|date:'Y-m-d' }}"
+                           class="form-control" id="{{ profile_form.birthday.id_for_label }}">
+          
+            
+          <button type="submit" class="btn btn-primary">Update Profile</button>
+        </div>
+    
+    </form>
+
+    <!-- Footer -->
+    <footer>
+      <p>⚠ Hãy Chú Ý Thông Tin Cá Nhân ⚠</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+      document.getElementById('upload-button').addEventListener('click', function() {
+          document.getElementById('upload-avatar').click();
+      });
+      
+      document.getElementById('upload-avatar').addEventListener('change', function(event) {
+          const file = event.target.files[0];
+          if (file) {
+              const reader = new FileReader();
+              reader.onload = function(e) {
+                  document.getElementById('avatar').src = e.target.result;
+              };
+              reader.readAsDataURL(file);
+          }
+      });
+      function closeWindow() {
+        setTimeout(function() {
+            window.close();
+        }, 1000); // Adjust the delay if needed
+      }
+      </script>
+    {% comment %} <script src="{% static 'app_home/js/profile_user-edit.js' %}"></script> {% endcomment %}
+  </body>
+</html>
+
