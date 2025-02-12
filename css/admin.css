@@ -47,10 +47,10 @@ body {
 
 /* Nội dung chính của trang Admin */
 .admin-content {
-  margin-left: 250px; /* Khoảng cách từ bên trái đủ để không bị che khuất */
+  margin-left: 250px;
   padding: 20px;
   box-sizing: border-box;
-  min-height: 100vh; /* Đảm bảo nội dung đủ chiều cao */
+  min-height: 100vh;
 }
 
 .admin-content h1 {
@@ -62,6 +62,7 @@ body {
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
 }
 
 .admin-section h2 {
@@ -96,5 +97,64 @@ button {
 }
 
 button:hover {
+  background-color: #26a69a;
+}
+
+/* Tin nhắn */
+.chat-box {
+  max-height: 300px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  background-color: #fff;
+}
+
+.message {
+  margin-bottom: 10px;
+}
+
+.user-message {
+  text-align: left;
+}
+
+.admin-message {
+  text-align: right;
+  background-color: #4dd0e1;
+  color: #fff;
+  border-radius: 10px;
+  display: inline-block;
+  padding: 10px;
+}
+
+.timestamp {
+  display: block;
+  font-size: 12px;
+  color: #888;
+  margin-top: 5px;
+}
+
+.chat-input {
+  display: flex;
+  gap: 10px;
+}
+
+.chat-input textarea {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.chat-input button {
+  background-color: #4dd0e1;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.chat-input button:hover {
   background-color: #26a69a;
 }

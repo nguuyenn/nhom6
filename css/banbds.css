@@ -1,0 +1,97 @@
+/* Định dạng tổng quát */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f7f7f7;
+  color: #333;
+}
+
+header {
+  background-color: #4dd0e1;
+  text-align: center;
+  padding: 20px 10px;
+  position: relative;
+}
+
+header .logo-container {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  align-items: center;
+}
+
+header .logo {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+header .home-button img {
+  width: 40px;
+  height: 40px;
+}
+
+header h1 {
+  font-size: 24px;
+  color: #fff;
+  margin: 0;
+}
+
+header p {
+  font-size: 14px;
+  color: #fff;
+}
+
+main {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 10px;
+}
+
+.property-list,
+.benefits {
+  background-color: #e0f7fa;
+  border-radius: 8px;
+  padding: 20px;
+  width: 45%;
+}
+
+.property-list h2,
+.benefits h2 {
+  color: #00796b;
+}
+
+footer {
+  background-color: #4dd0e1;
+  padding: 10px 20px;
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
+}
+
+.footer-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.footer-info .contact-info {
+  text-align: left;
+}
+
+.footer-info .contact-note {
+  text-align: right;
+}
+
+footer p {
+  margin: 0;
+}
+
+footer .copyright {
+  margin-top: 10px;
+  font-size: 12px;
+  color: #e0f7fa;
+}

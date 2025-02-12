@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thông Tin Cá Nhân</title>
+    <link rel="stylesheet" href="./hosouse.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Nút quay lại trang chính -->
+      <header>
+        <a href="./index.html">⬅ Quay lại trang chính</a>
+      </header>
+
+      <!-- Form cập nhật thông tin -->
+      <div class="update-form">
+        <h2>Cập Nhật Thông Tin Cá Nhân</h2>
+        <input type="text" id="name" placeholder="Họ và Tên" />
+        <input type="text" id="phone" placeholder="Số Điện Thoại" />
+        <input type="text" id="address" placeholder="Địa Chỉ Liên Hệ" />
+        <input type="email" id="email" placeholder="Gmail" />
+        <button id="update-button">Cập Nhật</button>
+      </div>
+
+      <!-- Phần hiển thị thông tin cá nhân -->
+      <div class="user-info" id="user-info">
+        <h2>Thông Tin Cá Nhân UTHLander</h2>
+        <div class="avatar-container">
+          <img
+            src="default-avatar.png"
+            alt="Ảnh đại diện"
+            id="avatar"
+            class="avatar"
+          />
+          <div class="avatar-upload">
+            <input type="file" id="upload-avatar" style="display: none" />
+            <button id="upload-button">Tải Ảnh Đại Diện</button>
+          </div>
+        </div>
+        <p id="display-name">Họ và Tên: Chưa cập nhật</p>
+        <p id="display-phone">Số Điện Thoại: Chưa cập nhật</p>
+        <p id="display-address">Địa Chỉ: Chưa cập nhật</p>
+        <p id="display-email">Gmail: Chưa cập nhật</p>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <p>⚠ Hãy Chú Ý Thông Tin Cá Nhân ⚠</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="./js/hosouse.js"></script>
+  </body>
+</html>

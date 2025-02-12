@@ -13,12 +13,13 @@
       </div>
       <nav class="nav">
         <a href="#">Nhà đất bán</a>
-        <a href="#">Bán Bất Động Sản</a>
+        <a href="./banbds.html">Bán Bất Động Sản</a>
         <a href="#">Dự án</a>
         <a href="./Blog.html">Blog</a>
         <a href="./tuyendung.html">Tuyển dụng</a>
       </nav>
       <div class="user-actions">
+        <a href="./dangnhap.html" class="login-button">Đăng Nhập</a>
         <a href="./dangbanbatdongsan.html">Đăng Tin</a>
       </div>
     </header>
@@ -133,9 +134,25 @@
         class="bird bird-2"
       />
     </div>
+    <!-- Nút nhắn tin ở góc dưới bên phải -->
+    <div id="chat-btn" class="chat-btn">
+      <span>💬</span>
+    </div>
 
-    <!-- Nội dung trang -->
-    <footer class="footer">
+    <!-- Giao diện hộp thư nhắn tin -->
+    <div id="chat-box" class="chat-box">
+      <div class="chat-header">
+        <h3>Liên Hệ Admin</h3>
+        <button id="close-chat" class="close-chat">X</button>
+      </div>
+      <div class="chat-content">
+        <!-- Tin nhắn sẽ xuất hiện ở đây -->
+      </div>
+      <div class="chat-footer">
+        <input type="text" id="message-input" placeholder="Nhập tin nhắn..." />
+        <button id="send-btn" class="send-btn">Gửi</button>
+      </div>
+    </div>
       Chào mừng đến với Bất Động Sản UTHLand
       <span>Trang web cung cấp thông tin bất động sản mới nhất và uy tín.</span>
     </footer>

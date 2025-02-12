@@ -1,13 +1,4 @@
-<?php  
-session_start();  
-
-// Kiểm tra xem người dùng đã đăng nhập chưa  
-if (isset($_SESSION['isAdmin']) && $_SESSION['isAdmin'] === true) {  
-    // Nếu đã đăng nhập, chuyển hướng đến trang admin  
-    header("Location: admin.html");  
-    exit;  
-}  
-?>  
+  
 <!DOCTYPE html>  
 <html lang="vi">  
 <head>  
