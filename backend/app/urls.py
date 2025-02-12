@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from django.urls import path,include
 from django.contrib import admin
 from app import views
@@ -18,4 +19,11 @@ urlpatterns = [
     path('blog',views.Blog,name ="blog"),
     path('tuyendung',views.TuyenDung,name="tuyendung"),
     
+=======
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('app/',views.TinhThanh,name='TinhThanh'),
+>>>>>>> 6d95b7a92f801cf9d992d401174c5bfea691f7dd
 ]

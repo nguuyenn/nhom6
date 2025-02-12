@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import os
 from django.shortcuts import render,redirect,get_object_or_404
 from django.http import HttpResponse
@@ -225,12 +226,36 @@ def Register(request):
     }
     
     return render(request, 'register.html', context)
+=======
+from django.shortcuts import render
+from django.http import HttpResponse
+from django.template import loader
+from .models import TinhThanh
+def Index(request):
+    return render(request,'index.html')
+>>>>>>> 6d95b7a92f801cf9d992d401174c5bfea691f7dd
 
 def Blog(request):
     template = loader.get_template('Blog.html')
     return HttpResponse(template.render())
 
+<<<<<<< HEAD
+=======
+def DangBanBatDongSan(request):
+    template = loader.get_template('dangbanbatdongsan.html')
+    return HttpResponse(template.render())
+
+>>>>>>> 6d95b7a92f801cf9d992d401174c5bfea691f7dd
 def TuyenDung(request):
     template = loader.get_template('tuyendung.html')
     return HttpResponse(template.render())
 
+<<<<<<< HEAD
+=======
+def TinhThanh(request):
+    return HttpResponse("")
+
+def TTDuAn(request):
+    return HttpResponse("")
+# Create your views here.
+>>>>>>> 6d95b7a92f801cf9d992d401174c5bfea691f7dd

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php  
 session_start();  
 
@@ -8,6 +9,8 @@ if (!isset($_SESSION['isAdmin']) || $_SESSION['isAdmin'] !== true) {
     exit;  
 }  
 ?>
+=======
+>>>>>>> 6d95b7a92f801cf9d992d401174c5bfea691f7dd
 <!DOCTYPE html>
 <html lang="vi">
   <head>
@@ -24,11 +27,20 @@ if (!isset($_SESSION['isAdmin']) || $_SESSION['isAdmin'] !== true) {
       </div>
       <ul class="admin-menu">
         <li><a href="#">Trang chủ</a></li>
+<<<<<<< HEAD
         <li><a href="#">Quản lý Bài Đăng</a></li>
         <li><a href="#">Quản lý Người Dùng</a></li>
         <li><a href="#">Thống Kê Website</a></li>
         <li><a href="#">Cài Đặt</a></li>
         <li><a href="logout.php">Đăng Xuất</a></li>
+=======
+        <li><a href="#manage-posts">Quản lý Bài Đăng</a></li>
+        <li><a href="#manage-users">Quản lý Người Dùng</a></li>
+        <li><a href="#messages">Tin Nhắn</a></li>
+        <li><a href="#stats">Thống Kê Website</a></li>
+        <li><a href="#settings">Cài Đặt</a></li>
+        <li><a href="#">Đăng Xuất</a></li>
+>>>>>>> 6d95b7a92f801cf9d992d401174c5bfea691f7dd
       </ul>
     </div>
 
@@ -36,6 +48,76 @@ if (!isset($_SESSION['isAdmin']) || $_SESSION['isAdmin'] !== true) {
     <div class="admin-content">
       <h1>Chào Mừng Đến Với Trang Quản Trị</h1>
       <p>Trang này dành cho admin để quản lý website của bạn.</p>
+<<<<<<< HEAD
+=======
+
+      <!-- Quản lý bài đăng -->
+      <section id="manage-posts" class="admin-section">
+        <h2>Quản lý Bài Đăng</h2>
+        <table>
+          <tr>
+            <th>ID</th>
+            <th>Tiêu Đề</th>
+            <th>Người Viết</th>
+            <th>Hành Động</th>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>Hướng dẫn lập trình</td>
+            <td>Nguyen Van A</td>
+            <td>
+              <button>Chỉnh Sửa</button>
+              <button>Xóa</button>
+            </td>
+          </tr>
+          <!-- Thêm các bài đăng khác tại đây -->
+        </table>
+      </section>
+
+      <!-- Quản lý người dùng -->
+      <section id="manage-users" class="admin-section">
+        <h2>Quản lý Người Dùng</h2>
+        <table>
+          <tr>
+            <th>ID</th>
+            <th>Tên Người Dùng</th>
+            <th>Email</th>
+            <th>Hành Động</th>
+          </tr>
+          <tr>
+            <td>101</td>
+            <td>Nguyen Van B</td>
+            <td>b.nguyen@example.com</td>
+            <td>
+              <button>Chỉnh Sửa</button>
+              <button>Xóa</button>
+            </td>
+          </tr>
+          <!-- Thêm các người dùng khác tại đây -->
+        </table>
+      </section>
+
+      <!-- Tin nhắn -->
+      <section id="messages" class="admin-section">
+        <h2>Hộp Thư Tin Nhắn</h2>
+        <div class="chat-box">
+          <div class="message user-message">
+            <p>Xin chào, tôi cần hỗ trợ về tài khoản!</p>
+            <span class="timestamp">29/12/2024, 10:30 AM</span>
+          </div>
+          <div class="message admin-message">
+            <p>
+              Chào bạn, vui lòng cung cấp thêm thông tin để chúng tôi hỗ trợ.
+            </p>
+            <span class="timestamp">29/12/2024, 10:32 AM</span>
+          </div>
+        </div>
+        <div class="chat-input">
+          <textarea placeholder="Nhập tin nhắn..." rows="3"></textarea>
+          <button>Gửi</button>
+        </div>
+      </section>
+>>>>>>> 6d95b7a92f801cf9d992d401174c5bfea691f7dd
     </div>
   </body>
 </html>
