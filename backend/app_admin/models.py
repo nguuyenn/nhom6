@@ -1,11 +1,9 @@
 from django.db import models
-from django import forms
 from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django.dispatch import receiver
-# Create your models here.
 
-#change forms register django
+
     
 
 
@@ -44,4 +42,12 @@ class Profile(models.Model):
     @receiver(post_save, sender=User)
     def save_user_profile(sender, instance, **kwargs):
         instance.profile.save()
-
+class Blog(models.Model):
+    
+    title = models.CharField(max_length=255)
+    author = models.ForeignKey(User,on_delete=models.CASCADE)
+    information = models.TextField()
+    dayUpBlog = models.DateField(blank=True, null=True) # ngày up blog lên
+    profile_picture = models.ImageField(null=True,upload_to='photos/')
+    def __str__(self):
+        return self.title + ' | ' + str(self.author) 

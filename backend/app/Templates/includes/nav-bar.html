@@ -1,54 +1,53 @@
-{%load static%}
+{% load static %}
 <header class="header">
   <div class="logo">
-    <a href = '/'>
-    <img class="gfgLogoImg normal" src="{%static 'app_home/img/logo/logo.ICO' %}" alt="geeksforgeeks" width="110" height="80">
-    <link rel="stylesheet" href="{% static 'app_home/css/nav-bar.css' %}">
-    <script src="{% static 'app_home/js/nav-bar.js' %}" defer></script> 
-  </a>
+    <a href='/'>
+      <img class="gfgLogoImg normal" src="{% static 'app_home/img/logo/logo.ICO' %}" alt="geeksforgeeks" width="110" height="80">
+    </a>
     <h1>Bất Động Sản UTHLand</h1>
   </div>
+  <link rel="stylesheet" href="{% static 'app_home/css/nav-bar.css' %}">
+  <script src="{% static 'app_home/js/nav-bar.js' %}" defer></script>
+  
   <nav class="nav">
-    <a href= "{% url 'batdongsans' %}">Nhà đất bán</a>
-    <a href="{%url 'batdongsan-new'%}">Bán Bất Động Sản</a>
-    <a href="{%url 'blog' %}">Blog</a>
-    <a href= "{% url 'tuyendung'%}">Tuyển dụng</a>
+    <a href="{% url 'batdongsans' %}">Nhà đất bán</a>
+    <a href="{% url 'batdongsan-new' %}">Bán Bất Động Sản</a>
+    <a href="{% url 'blog' %}">Blog</a>
+    <a href="{% url 'tuyendung' %}">Tuyển dụng</a>
+    <a href="{% url 'blog-new' %}">Đăng tin </a>
   </nav>
+  
   <div class="user-actions">
     {% if user.is_authenticated %}
     <div class="user-profile">
-        <div class="user-info">
-            <p class="welcome-message">Welcome {{ user.username }}</p>
-    {% if user.profile.profile_picture %}
+      <div class="user-info">
+        <p class="welcome-message">Welcome {{ user.username }}</p>
+        {% if user.profile.profile_picture %}
         <img src="{{ user.profile.profile_picture.url }}"
              alt="Ảnh đại diện"
              id="avatar"
-             class="avatar"
              class="avatar rounded-avatar"
-             with = "80"
-             height = "70"
-        />
-    {% else %}
+             width="80"
+             height="70">
+        {% else %}
         <img src="{% static 'app_home/img/default-picture.jpg' %}"
              alt="Ảnh đại diện mặc định"
              id="avatar"
              class="avatar rounded-avatar"
-             with = "80"
-             height = "70"
-        />
-    {% endif %}
-        </div>
-        <div class="dropdown-menu" id="user-dropdown">
-            <a href="{% url 'profile' %}" class="dropdown-item">Thông tin cá nhân</a>
-            <a href="{% url 'logout' %}" class="dropdown-item">Logout</a>
-        </div>
+             width="80"
+             height="70">
+        {% endif %}
+      </div>
+      <div class="dropdown-menu" id="user-dropdown">
+        <a href="{% url 'profile' %}" class="dropdown-item">Thông tin cá nhân</a>
+        <a href="{% url 'logout' %}" class="dropdown-item">Đăng xuất</a>
+      </div>
     </div>
     {% else %}
     <div class="auth-links">
-        <a class="nav-link" href="{% url 'login' %}">Login</a>
-        <a class="nav-link" href="{% url 'register' %}">Sign Up</a>
+      <a class="nav-link" href="{% url 'login' %}">Login</a>
+      <a class="nav-link" href="{% url 'register' %}">Sign Up</a>
     </div>
     {% endif %}
   </div>
 </header>
-

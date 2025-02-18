@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import unittest
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
@@ -24,31 +24,4 @@ time.sleep(2.5)
 
 
 password.send_keys(Keys.RETURN)
-=======
-import unittest
-from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.common.by import By
-import time
-
-driver = webdriver.Chrome()
-
-
-
-# get python.org using selenium
-driver.get("http://127.0.0.1:8000/admin/login/?next=/admin/")
-inputUserName  = driver.find_element(By.NAME,value="username")
-print(inputUserName)
-inputUserName.send_keys("trung")
-time.sleep(2.5)
-
-password  = driver.find_element(By.NAME,value="password")
-print(inputUserName)
-password.send_keys("123456")
-time.sleep(2.5)
-
-
-
-password.send_keys(Keys.RETURN)
->>>>>>> 6d95b7a92f801cf9d992d401174c5bfea691f7dd
 time.sleep(10)

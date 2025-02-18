@@ -1,7 +1,5 @@
 from django.urls import path,include
-from django.contrib import admin
 from app import views
-from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('',views.Home,name ='Home'),
@@ -15,7 +13,9 @@ urlpatterns = [
     path('logout/',views.Logout_page ,name='logout'),
     path('register',views.Register,name='register'),
     path('search/',views.search_view,name='search'),
-    path('blog',views.Blog,name ="blog"),
+    path('blog',views.blogs,name ="blog"),
+    path('blog/<int:blog_id>/', views.detail_blog, name='blog-detail'),
+    path('blog-new',views.new_blog,name = 'blog-new'),
     path('tuyendung',views.TuyenDung,name="tuyendung"),
     
 ]

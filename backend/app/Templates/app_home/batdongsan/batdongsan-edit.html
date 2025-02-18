@@ -10,63 +10,9 @@
 {% block content %}
 <head>
     <title>Contact Form</title>
-    <style>
-               
-        .form-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 150vh; /* Chiều cao bằng với chiều cao viewport */
-        }
-
-        form {
-            width: 50%; /* Điều chỉnh chiều rộng tùy ý */
-            margin: 140px;
-            padding: 20px;
-            background-color: white; /* Tùy chọn: làm nổi bật form */
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Tùy chọn: hiệu ứng đổ bóng nhẹ */
-        }
-
-        h2 {
-            margin-bottom: 20px;
-        }
-
-        .form-container label {
-            font-weight: bold;
-        }
-
-        .form-container input, .form-container textarea {
-            width: 100%;
-            padding: 10px;
-            margin-top: 5px;
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-            border-radius: 3px;
-        }
-
-        .form-container input[type="submit"] {
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            cursor: pointer;
-            border-radius: 3px;
-        }
-
-        .form-container input[type="submit"]:hover {
-            background-color: #45a049;
-        }
-
-        .form-container small {
-            display: block;
-            margin-top: -10px;
-            margin-bottom: 10px;
-            color: #888;
-        }
-        {# Add this section at the top of your template to display messages #}
-    </style>
 </head>
 <body>
-    
+    <link rel="stylesheet" href="{% static 'app_home/css/batdongsan/batdongsan-edit.css' %}" />
     <div class="form-container">
         <form action ="{% url 'batdongsan-edit' batdongsan.id %}" method = "POST" enctype="multipart/form-data" >
             {% csrf_token %}

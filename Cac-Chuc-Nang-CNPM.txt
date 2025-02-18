@@ -11,9 +11,6 @@ Liên hệ với môi giới qua nền tảng.
 Đăng ký tài khoản.
 Đăng nhập.
 Xem danh sách các bất động sản phù hợp.
-Đề xuất hợp tác với chủ sở hữu.
-Hệ thống quản trị viên:
 
+Hệ thống quản trị viên:
 Quản lý thông tin người dùng (chủ sở hữu và môi giới).
-Duyệt bài đăng bất động sản để đảm bảo chất lượng.
-Xác minh các đại lý/môi giới uy tín.

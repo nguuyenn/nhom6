@@ -90,3 +90,4 @@ class DjangoTest(unittest.TestCase):
 # execute the script
 if __name__ == "__main__":
     unittest.main()
+    

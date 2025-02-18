@@ -1,0 +1,72 @@
+
+{% extends "master-page.html" %}
+{% load static %}
+
+{% block nav-bar %}
+    {% include '../../includes/nav-bar.html'%}
+{% endblock %}
+
+{% block content %}
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>{{ blog.title }} - UTHLand</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+
+        <link rel="stylesheet" href=" {%static 'app_home/css/blog/blog-detail.css'%}" />
+    </head>
+
+    <body>
+        
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+        <div class="container bootstrap snippets bootdey">
+            <div class="col-md-8">
+                <div class="box box-widget">
+                    <div class="box-header with-border">
+                    <div class="user-block">
+                        {% if blog.author.profile.profile_picture.url %}
+                            <img class="img-circle" src="{{ blog.author.profile.profile_picture.url }}" alt="User Image">
+                        {% else %}
+                            <img class="img-circle" src="{% static 'app_home/img/default-picture.jpg' %}" alt="User Image">
+                        {% endif %}
+                        <span class="username">{{blog.author.username}}</span>
+                        <span class="description">Shared publicly - {{ blog.dayUpBlog|date:"F d, Y" }}</span>
+                    </div>
+                    <div class="box-tools">
+                    <button type="button" class="btn btn-box-tool" data-toggle="tooltip" title="" data-original-title="Mark as read">
+
+            
+                        <button type="button" class="btn btn-box-tool" onclick="window.location.href='{% url 'blog' %}';">
+                            <i class="fa fa-times"></i>
+                        </button>
+                    </div>
+                    </div>
+                    <div class="box-body">
+                    <p>* {{ blog.information }}</p>
+
+                    <div class="attachment-block clearfix">
+                        <img class="attachment-img" src="{{ blog.profile_picture.url }}" alt="Attachment Image">
+
+                    </div>
+                    <button type="button" class="btn btn-default btn-xs"><i class="fa fa-share"></i> Share</button>
+                    <button type="button" class="btn btn-default btn-xs"><i class="fa fa-thumbs-o-up"></i> Like</button>
+                    
+                    </div>
+                    <div class="box-footer box-comments">
+                    <div class="box-comment">
+                        <p> Liên hệ với tôi qua số điện thoại {{blog.author.profile.phoneNumber}}</p>
+                        <p> Hoặc qua địa chỉ email : {{blog.author.email}} </p>
+                    </div>
+                   
+                   
+                </div>
+            </div>
+        </div>
+    </body>
+{% endblock %}
+
+{% block footer %}
+    {% include '../../includes/footer.html'%}
+{% endblock %}

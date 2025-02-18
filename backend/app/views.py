@@ -2,14 +2,15 @@ import os
 from django.shortcuts import render,redirect,get_object_or_404
 from django.http import HttpResponse
 from django.template import loader
-from app_admin.models import Batdongsan
-from .forms import BatDongSan_Form,UpdateUserForm, UpdateProfileForm
+from app_admin.models import Batdongsan,Blog
+from .forms import BatDongSan_Form,UpdateUserForm, UpdateProfileForm,BlogForm
 from django.contrib.auth import authenticate,login,logout
 from django.contrib import messages 
+from datetime import date
 from .models import *
-from django.contrib.auth.models import User
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.decorators import login_required
+from django.views.generic import ListView,DetailView
 def Home(request):
     return render(request,'home.html')
 
@@ -23,7 +24,7 @@ def batdongsans(request):
 
 @login_required
 def edit_batdongsan(request, id):
-     # Check if user is authenticated
+     # Kiem tra nguoi dung da dang nhap chua 
     if not request.user.is_authenticated:
         messages.warning(request, 'Bạn cần phải đăng nhập để chỉnh sửa bất động sản.')
         return render(request, 'app_home/batdongsan/batdongsan-edit.html', {
@@ -153,7 +154,7 @@ def edit_profile(request):
 
 
 
-
+#Bỏ qua kiểm tra token CSRF cho các yêu cầu gửi đến hàm
 @csrf_exempt
 def login_page(request):
     if request.method == "POST":
@@ -181,18 +182,18 @@ def search_view(request):
         category_search = request.POST.get('category', '')
         location_search = request.POST.get('location', '')
         
-        # Bắt đầu với queryset cơ bản
+        # Lọc các bds đang active
         properties = Batdongsan.objects.filter(active=True)
         
-        # Tìm theo tên nếu có nhập
+        # Lọc theo tên
         if name_search:
             properties = properties.filter(name__icontains=name_search)
             
-        # Tìm theo category nếu có chọn và không phải 'all'
+        # Tìm theo category nếu không phải chọn tìm tất cả
         if category_search and category_search != 'all':
             properties = properties.filter(category=category_search)
             
-        # Tìm theo địa điểm nếu có nhập
+        # Tìm theo địa điểm 
         if location_search:
             properties = properties.filter(local_TT__icontains=location_search)
         
@@ -226,10 +227,39 @@ def Register(request):
     
     return render(request, 'register.html', context)
 
-def Blog(request):
-    template = loader.get_template('Blog.html')
-    return HttpResponse(template.render())
 
+
+def blogs(request):
+    blog_posts = Blog.objects.all().order_by('-dayUpBlog')
+    
+    context = {
+        'blog_posts': blog_posts,
+    }
+    
+    return render(request, 'app_home/blog/blog.html', context)
+    
+    
+def detail_blog(request,blog_id):
+    blog = get_object_or_404(Blog, id=blog_id)
+    context = {
+        'blog': blog,
+    }
+    return render(request, 'app_home/blog/blog-detail.html', context)
+
+@login_required
+def new_blog(request):
+    if request.method == 'POST':
+        form = BlogForm(request.POST, request.FILES)
+        if form.is_valid():
+            blog = form.save(commit=False)
+            blog.author = request.user
+            blog.dayUpBlog = date.today()
+            blog.save()
+            return redirect('blog')
+    else:
+        form = BlogForm()
+    
+    return render(request, 'app_home/blog/blog-new.html', {'form': form})
 
 def TuyenDung(request):
     template = loader.get_template('tuyendung.html')

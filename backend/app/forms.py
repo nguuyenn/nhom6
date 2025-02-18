@@ -1,10 +1,7 @@
 from django import forms
-from django.forms import ModelForm
 from django.contrib.auth.forms import UserCreationForm,UserChangeForm
 from django.contrib.auth.models import User
-from app_admin.models import Batdongsan,Profile
-from django.core.validators import RegexValidator
-from django.utils import timezone
+from app_admin.models import Batdongsan,Profile,Blog
 
 class BatDongSan_Form(forms.ModelForm):
     name = forms.CharField(max_length=150, required=False)
@@ -81,3 +78,8 @@ class SignUpForm(UserCreationForm):
     class Meta:
         model = User
         fields = ('username', 'first_name', 'last_name', 'email', 'password1', 'password2')
+        
+class BlogForm(forms.ModelForm):
+    class Meta:
+        model = Blog
+        fields = ['title', 'information', 'profile_picture']
