@@ -1,4 +1,3 @@
-
 import unittest
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
@@ -29,10 +28,10 @@ class NewBDSTest(unittest.TestCase):
         driver.find_element(By.NAME, "name").send_keys("Chung cư cao cấp Green Park")
         time.sleep(2)
         
-        driver.find_element(By.NAME, "category").send_keys("Apartment")
+        driver.find_element(By.NAME, "category").send_keys("Nhà")
         time.sleep(2)
         
-        driver.find_element(By.NAME, "local_TT").send_keys("Quận 7, TP.HCM")
+        driver.find_element(By.NAME, "local_TT").send_keys("TP.HCM")
         time.sleep(2)
         
         driver.find_element(By.NAME, "area").send_keys("75m2")
@@ -144,7 +143,7 @@ class NewBDSTest(unittest.TestCase):
         
         actualURL = driver.current_url
         print(f"URL hiện tại: {actualURL}")
-        assert "batdongsan-new" in actualURL
+        assert "batdongsan-new" in actualURL  # kiem tra xem url hien tai co giong voi url mong muon chua
 
     # Test case 5: Kiểm tra với định dạng ngày không hợp lệ
     def test_invalid_date(self):

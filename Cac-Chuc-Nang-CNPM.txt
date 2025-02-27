@@ -3,14 +3,17 @@ Xác định chức năng chính
 
 Đăng ký tài khoản.
 Đăng nhập.
-Tạo bài đăng giới thiệu bất động sản (căn hộ, nhà, đất...).
-Xem danh sách các môi giới/đại lý uy tín được hệ thống gợi ý.
-Liên hệ với môi giới qua nền tảng.
-Đối với đại lý/môi giới:
 
-Đăng ký tài khoản.
-Đăng nhập.
-Xem danh sách các bất động sản phù hợp.
+Tạo bài đăng giới thiệu bất động sản (căn hộ, nhà, đất...).
+Xem danh sách các môi giới/đại lý uy tín được lưu trữ từ trước trobng hệ thống .
+Tìm kiếm bất động sản phù phận
+
+Tạo blog để đăng bài 
+Xem các blog đã đăng 
 
 Hệ thống quản trị viên:
-Quản lý thông tin người dùng (chủ sở hữu và môi giới).
+Quản lý thông tin người dùng
+Thêm xóa , sửa , xem các user
+Thêm xóa sửa xem các blog
+Thêm xóa sửa xem các bất động sản
+

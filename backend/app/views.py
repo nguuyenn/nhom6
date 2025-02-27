@@ -10,7 +10,6 @@ from datetime import date
 from .models import *
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.decorators import login_required
-from django.views.generic import ListView,DetailView
 def Home(request):
     return render(request,'home.html')
 
@@ -30,7 +29,7 @@ def edit_batdongsan(request, id):
         return render(request, 'app_home/batdongsan/batdongsan-edit.html', {
             'message': 'Bạn cần phải đăng nhập để chỉnh sửa bất động sản.'
         })
-    batdongsan = get_object_or_404(Batdongsan, id=id)
+    batdongsan = get_object_or_404(Batdongsan, id=id) 
     old_image = batdongsan.profile_picture  # Lưu đường dẫn ảnh cũ
     
     if request.method == 'POST':
@@ -105,20 +104,20 @@ def edit_profile(request):
         profile_form = UpdateProfileForm(request.POST, request.FILES, instance=request.user.profile)
         
         if user_form.is_valid() and profile_form.is_valid():
-            # Handle User form
+            # xu ly user form
             user = user_form.save(commit=False)
-            # Keep old username if new one is empty
+            
             if not user.username:
                 user.username = request.user.username
             
-            # Reset fields to None if they contain "Không có thông tin"
+            # reset cac truong neu no ko co thong tin
             for field in ['first_name', 'last_name', 'email']:
                 if getattr(user, field) == "Không có thông tin":
                     setattr(user, field, None)
             
             user.save()
             
-            # Handle Profile form
+            # xu ly form hinh anh
             profile = profile_form.save(commit=False)
             profile.user = user
             
@@ -127,7 +126,7 @@ def edit_profile(request):
                 if getattr(profile, field) == "Không có thông tin":
                     setattr(profile, field, None)
             
-            # Handle profile picture
+            # xu ly hinh anh
             if 'profile_picture' in request.FILES:
                 if profile.profile_picture:
                     try:
@@ -246,7 +245,7 @@ def detail_blog(request,blog_id):
     }
     return render(request, 'app_home/blog/blog-detail.html', context)
 
-@login_required
+
 def new_blog(request):
     if request.method == 'POST':
         form = BlogForm(request.POST, request.FILES)
